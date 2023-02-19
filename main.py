@@ -50,7 +50,7 @@ def login():
     print(pm.ACCESS_TOKEN)
     b1 = ttk.Button(frm, text="Take Picture", command= pic).grid(column=2, row=1)
     b2 = ttk.Button(frm, text="Quit", command=root.destroy).grid(column=2, row=7)
-    b2.pack(side = BOTTOM)
+
 frm = ttk.Frame(root, padding=10)
 frm.grid()
 frm.pack()
