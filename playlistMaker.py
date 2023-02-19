@@ -62,10 +62,11 @@ def read_saved_tracks():
                             params = {"limit" : 50})
     json_resp = response.json()
     for song in json_resp['items']:
-        for track in song['track']:
+        for artist in song['track']['artists']:
+            print(artist['href'])
             #for artist in track['artists']:
                 #print("Artist: {} | Genre: {}".format(artist['name'], artist['genre']))
-        print('\n')
+            print('\n')
     #print(json_resp['items'])
     return json_resp
 
