@@ -7,6 +7,7 @@ import os
 
 
 root = Tk()
+root.geometry('300x300')
 root.title("Musical Recognition")
 
 
@@ -39,8 +40,8 @@ def pic():
     main_emotion = demo[0]['dominant_emotion']  
     if main_emotion == 'discust':
         print("No time for music! Your main emotion is " + main_emotion +  " Go exercise.")
-    # else:
-    #     print("Your main emotion was " + main_emotion)
+    else:
+        print("Your main emotion was " + main_emotion)
 
 def login():
     import playlistMaker as pm
@@ -48,10 +49,11 @@ def login():
     # ACCESS_TOKEN = pm.user_authorize_Spotipy()
     print(pm.ACCESS_TOKEN)
     b1 = ttk.Button(frm, text="Take Picture", command= pic).grid(column=2, row=1)
-    ttk.Button(frm, text="Quit", command=root.destroy).grid(column=2, row=7)
-
+    b2 = ttk.Button(frm, text="Quit", command=root.destroy).grid(column=2, row=7)
+    b2.pack(side = BOTTOM)
 frm = ttk.Frame(root, padding=10)
 frm.grid()
+frm.pack()
 
 b0=ttk.Button(frm, text = "Login", command = login).grid(column=2, row=1)
 
